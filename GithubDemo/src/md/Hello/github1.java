@@ -1,6 +1,6 @@
 package md.Hello;
 
-public class HelloWorld {
+public class github1 {
 
 	public static void main(String[] args) {
 		System.out.println("Welcome to Hello world!!! and math!!!");
@@ -24,7 +24,11 @@ public class HelloWorld {
 			if(arr[i]%2==0) {
 				System.out.print(" "+arr[i]);
 			}
+	
 		}
+	}
+    public static void oddNum(int[] arr) {
+		
 	}
 	
 }
