@@ -1,6 +1,8 @@
 package Hasan_LeetCode;
 
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 /*
@@ -12,12 +14,17 @@ import java.util.Set;
  * substring.
  */
 
+//Approach 1: Brute Force; Time complexity O(n^3)
+
 public class LeetProblem3 {
 	
 	public static void main(String[] args) {
-		String s="abcabcbb";
+		//String s="abcabcbb";
+		String s="pwwkew";
 		int length=lengthOfLongestSubstring(s);
 		System.out.println("Lenght= "+length);
+		int length1=lengthOfSubstring(s);
+		System.out.println("Lenght= "+length1);
 		
 
 	}
@@ -26,7 +33,8 @@ public class LeetProblem3 {
 		int n=s.length();
 		for(int i=0;i<n;i++) {
 			for(int j=i+1;j<=n;j++) {
-				if(allUnique(s,i,j)) length=Math.max(length,j-i);
+				if(allUnique(s,i,j)) 
+					length=Math.max(length,j-i);
 			}
 		}
 		return length;
@@ -42,4 +50,20 @@ public class LeetProblem3 {
 		return true;
 	}
 
+	//Approach 2: Sliding window using HashMap; Time Complexity O(n)
+	
+	public static int lengthOfSubstring(String s) {
+		int length=0;
+		int n=s.length();
+		Map<Character, Integer> map=new HashMap<>();
+		
+		for(int j=0,i=0;j<n;j++ ) {
+			if(map.containsKey(s.charAt(j))) {
+				i=Math.max(map.get(s.charAt(j)), i);
+			}
+			length=Math.max(length, (j-i)+1);
+			map.put(s.charAt(j),j+1);
+		}
+		return length;
+	}
 }
