@@ -66,7 +66,7 @@ public class Problem1{
 		Set<Integer> hashSet= new HashSet<Integer>();
 		for(int i=0;i<arr.length;i++) {
 			map.put(arr[i],i);
-			hashSet.add(arr[i]);
+			hashSet.add(arr[i]); // putting elements in a set to avoid duplication
 		}
 		if(arr.length!=hashSet.size())
 		{//System.err.println("Elements are not distinct");
