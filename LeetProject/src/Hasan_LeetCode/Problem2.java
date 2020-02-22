@@ -74,12 +74,37 @@ public class Problem2 {
 		public static LinkedList delete(LinkedList list, int data){
 			Node curr_node=list.head, prev_node=null;
 			
+			// case1: if data is in the head
+			if(curr_node!=null&&curr_node.data==data){
+				list.head=curr_node.next; //just the head move the the next node
+				return list;
+			}
+			
+			
+			//case2: If the data is in other then the head
+			/*
+			 * need to itarate through the lsit untill get the data
+			 * and prev_node and curr_node need to be tracked
+			 */
+			while(curr_node!=null&&curr_node.data!=data){
+				prev_node=curr_node;
+				curr_node=curr_node.next;
+			}
+			if(curr_node!=null&&curr_node.data==data){
+				prev_node.next=curr_node.next;
+			}
+			
+			//case:3 if data is not found in the list
+			if(curr_node==null){
+				System.out.println("Not foud in the list");
+			}
+			
 			return list;
 		}
 		
 		public static void printList(LinkedList list){
 			Node curr_node=list.head;
-			System.out.print("Linkedlist: ");
+			System.out.println("Linkedlist: ");
 			while(curr_node!=null){
 				System.err.print(curr_node.data+" ");
 				curr_node=curr_node.next;
@@ -93,12 +118,14 @@ public class Problem2 {
 		list=list.insert(list,2);
 		list=list.insert(list,3);
 		list=list.insert(list,4);
-		list.printList(list);
+		//list.printList(list);
 		
-		if(list.search(list, 3)==true){
+		if(list.search(list, 4)==true){
 			System.out.println("\nThis data exists in the linked list");
 		}
 		
+		list.delete(list, 4);
+		list.printList(list);
 	}
 
 	
