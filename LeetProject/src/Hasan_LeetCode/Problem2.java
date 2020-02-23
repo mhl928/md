@@ -1,4 +1,6 @@
 package Hasan_LeetCode;
+
+import java.util.*;
 /*
  * You are given two non-empty linked lists representing two 
  * non-negative integers. The digits are stored in reverse order
@@ -104,30 +106,90 @@ public class Problem2 {
 		
 		public static void printList(LinkedList list){
 			Node curr_node=list.head;
-			System.out.println("Linkedlist: ");
+			System.out.println(" ");
 			while(curr_node!=null){
-				System.err.print(curr_node.data+" ");
+				System.out.print(curr_node.data+" ");
 				curr_node=curr_node.next;
 			}
 		}
+		
+		public void reverse() {
+		    Node pointer = head;
+		    Node previous = null, current = null;
+
+		    while (pointer != null) {
+		      current = pointer;
+		      pointer = pointer.next;
+
+		      // reverse the link
+		      current.next = previous;
+		      previous = current;
+		      head = current;
+		    }
+		}
+
+	}
+	
+	public static LinkedList addTwoSum(LinkedList list1, LinkedList list2){
+		
+		//Node dumyNode=new Node(0);
+		LinkedList list3=new LinkedList();
+		Node node1 =list1.head;
+		Node  node2=list2.head;
+		
+		int carry=0;
+		while(node1!=null||node2!=null){
+			int x=(node1!=null)?node1.data:0;
+			int y=(node2!=null)?node2.data:0;
+			int sum=x+y+carry;
+			carry=sum/10;
+		    list3.insert(list3, sum%10);
+			if(node1!=null) node1=node1.next;
+			if(node2!=null) node2=node2.next;
+		}
+		
+		if(carry>0){
+			list3.insert(list3, carry);
+		}
+		
+		return list3;
 	}
 	
 	public static void main(String[] args){
-		LinkedList list= new LinkedList();
-		list=list.insert(list,1);
-		list=list.insert(list,2);
-		list=list.insert(list,3);
-		list=list.insert(list,4);
-		//list.printList(list);
+		LinkedList list1= new LinkedList();
+		LinkedList list2= new LinkedList();
+		LinkedList list3= new LinkedList();
+	    
+		//Node node1=new Node(2);
+		//Node node2=new Node(5);
+		list1.insert(list1,3);
+		list1.insert(list1,4);
+		list1.insert(list1,2);
+		list2.insert(list2,9);
+		list2.insert(list2,6);
+		list2.insert(list2,8);
+		list1.printList(list1);
+		list2.printList(list2);
+		list1.reverse();
+		list2.reverse();
+		//list1.printList(list1);
+		//list2.printList(list2);
+		//System.out.println(list2.head.data);
+		list3=addTwoSum(list1,list2);
+		System.out.print("\nsum = ");
+		//list3.printList(list3);
+	    list3.reverse();
+	    list3.printList(list3);
 		
-		if(list.search(list, 4)==true){
+	/*	if(list.search(list, 4)==true){
 			System.out.println("\nThis data exists in the linked list");
 		}
 		
 		list.delete(list, 4);
-		list.printList(list);
+		list.printList(list);*/
 	}
 
-	
+	}
 
-}
+
+
