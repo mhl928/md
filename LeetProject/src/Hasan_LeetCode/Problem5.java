@@ -28,7 +28,7 @@ public class Problem5 {
 	}
 	
 	/*
-	// to check a character is palindrome or not
+	// to check a string is palindrome or not
 	public static boolean isPalindrome(String s){
 		int middle=s.length()/2;
 		int left, right;
