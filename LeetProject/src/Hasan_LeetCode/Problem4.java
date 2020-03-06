@@ -21,7 +21,7 @@ package Hasan_LeetCode;
  * The median is (2 + 3)/2 = 2.5
  */
 
-public class LeetProblem4 {
+public class Problem4 {
 	
 	public static void main(String[] args){
 		int[] arr3={3,2,9,1,6,2,8,3,5};
