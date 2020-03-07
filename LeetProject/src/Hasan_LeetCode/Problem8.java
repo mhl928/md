@@ -52,7 +52,7 @@ Output: -2147483648
 public class Problem8 {
 	public static void main(String[] args){
 		
-		String s="   -987644dhdsh";
+		String s="   -21474499dgdfgsd5467";
 		int num=myAtoi(s);
 		System.out.println("String = "+s+" , Converted Integer = "+num);
 		
@@ -80,9 +80,16 @@ public class Problem8 {
 				break;
 			}
 			int digit= (int)(s.charAt(i)-'0');
+			if(!isNegative&&result>(Integer.MAX_VALUE-digit)/10) return Integer.MAX_VALUE;
+			else if(isNegative&&result<(Integer.MIN_VALUE+digit)/10) return Integer.MIN_VALUE;
+			
 			result=result*10+digit;
 		}
+		
 		if(isNegative) result=-result;
+		
+		// handle out of range
+		
 		
 		return result;
 	}
