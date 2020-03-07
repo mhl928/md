@@ -25,8 +25,13 @@ public class Problem11 {
 	
 	public static int maxArea(int[] height){
 		int maxArea=0;
-		int leftX=0; 
-		int rightX=height.length-1;
+		int leftX=0; // first x coordinate 
+		int rightX=height.length-1; // last x coordinate
+		
+		/*
+		 * track the maxArea for the first line and the last line and then second and second last 
+		 * and so on...
+		 */
 		while(leftX<rightX){
 			maxArea=Math.max(maxArea, Math.min(height[leftX], height[rightX])*(rightX-leftX));
 			
