@@ -16,7 +16,7 @@ import java.util.Set;
 
 //Approach 1: Brute Force; Time complexity O(n^3)
 
-public class LeetProblem3 {
+public class Problem3 {
 	
 	public static void main(String[] args) {
 		//String s="abcabcbb";
@@ -67,3 +67,6 @@ public class LeetProblem3 {
 		return length;
 	}
 }
+
+
+// checking github
