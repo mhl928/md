@@ -57,7 +57,7 @@ Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
 public class Problem12 {
 
 	public static void main(String[] args){
-		int x=54;
+		int x=4589;
 		String roman=numToRoman(x);
 		System.out.println("roman of "+x+" = "+roman);
 		
