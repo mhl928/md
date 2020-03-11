@@ -28,11 +28,11 @@ public class Problem14 {
 	
 	public static String longestCommonPrefix(String[] sArr){
 		if(sArr.length==0) return "";
-		String commonPrefix=sArr[0]; // consider the first word of the array is prefix
+		String commonPrefix=sArr[0]; //start considering the first word of the array is prefix
 		for(int i=1;i<sArr.length;i++){
 			// check every other word of the the array with the prefix
 			// if the prefix contains in the word then it is 0 otherwise -1
-			//if -1 then prefix letter drop down 1 and we will get new prefix
+			//if -1 then prefix letter drop down 
 			while(sArr[i].indexOf(commonPrefix)!=0){ 
 				commonPrefix=commonPrefix.substring(0,commonPrefix.length()-1);
 				if(commonPrefix.isEmpty()) return "";
