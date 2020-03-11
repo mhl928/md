@@ -29,7 +29,7 @@ public class Problem15 {
 	
 	public static void main(String[] args) {
 		int[] num= {2,2,-1,4,0,1,7,7,-8,6,-8,5,2,3,1,-1,2,2};
-		int target=1;
+		int target=15;
 		List<List<Integer>> result=threeSum(num,target);
 		for(int i=0;i<result.size();i++) {
 			System.out.println(result.get(i));
@@ -38,6 +38,7 @@ public class Problem15 {
 	}
 	
 	public static List<List<Integer>> threeSum(int[] arr, int target){
+		Arrays.sort(arr);
 		List<List<Integer>> result=new ArrayList<>();
 		
 		// fix the first element one by one and find others two
