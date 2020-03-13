@@ -85,7 +85,7 @@ public class Problem4 {
 public static void merge(int[] arr, int left, int middle, int right){
 		
 		int i,j,k;
-		int length1=middle-left+1;
+		int length1=middle-left+1; // left half: middle-(left-1)
 		int length2= right-middle;
 		int[] arr1= new int[length1];
 		int[] arr2= new int[length2];
