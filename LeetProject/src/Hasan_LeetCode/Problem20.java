@@ -44,17 +44,10 @@ public class Problem20 {
 	public static void main(String[] args) {
 		String s="{[]}([()])";
 		if(isValidParen(s)) {
-<<<<<<< HEAD
 		System.out.println("\n    Parenthesis are well organized");
 		}
 		else {
-		System.out.println("\n    Parenthesis are not organized");
-=======
-		System.out.println("Parenthesis are well organized");
-		}
-		else {
 		System.out.println("Parenthesis are not organized");
->>>>>>> a0ffc0035fd70378f3e39179b78ea584dcdf10f5
 		}
 	}
 	
