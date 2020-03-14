@@ -47,7 +47,7 @@ s = "acdcb"
 p = "a*c?b"
 Output: false
  */
-public class Problem44 {
+public class Problem44 {     // video link: https://www.youtube.com/watch?v=3ZDZ-N0EPV0
 	
 	public static void main(String[] args) {
 		String s="adbacd";
