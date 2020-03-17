@@ -50,8 +50,8 @@ Output: false
 public class Problem44 {     // video link: https://www.youtube.com/watch?v=3ZDZ-N0EPV0
 	
 	public static void main(String[] args) {
-		String s="adbacd";
-		String p="a*****a*****?*d";
+		String s="hewihfiowehf";
+		String p="*???*?*****f";
 		boolean bo=isMatched(s,p);
 		System.out.println("\n Is pattern matched? "+bo);
 	}
